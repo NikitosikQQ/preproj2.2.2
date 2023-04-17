@@ -25,7 +25,7 @@ public class CarService {
         if (count == null || count >= maxCars) {
             return getListOfCars();
         } else {
-            return getListOfCars().stream().limit(count).toList();
+            return carRepository.getListOfCarsByCount(count);
         }
     }
 }

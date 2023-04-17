@@ -11,4 +11,7 @@ import java.util.List;
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {
 
+    @Query(nativeQuery = true, value = "SELECT * FROM Car LIMIT :count")
+    List<Car> getListOfCarsByCount (@Param("count") Long count);
+
 }
